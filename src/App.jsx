@@ -4,6 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Workflow from "./components/optionalPart/Workflow";
 import Steps from "./components/steps3Section/Steps";
+import Pricing from "./components/pricingSection/Pricing";
 
 function App() {
   const [cart] = useState([]);
@@ -12,6 +13,7 @@ function App() {
     <>
       <Navbar cartCount={cart} />
       <Steps />
+      <Pricing />
       <Workflow />
       <Footer />
     </>
