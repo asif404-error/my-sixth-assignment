@@ -3,7 +3,7 @@ import React from "react";
 const steps = [
   {
     number: "01",
-    icon: "https://i.ibb.co.com/JwkLWK5x/user.png",
+    icon: "https://i.ibb.co.com/s9jTPR1S/user.png",
     title: "Create Account",
     description:
       "Sign up for free in seconds. No credit card required to get started.",
