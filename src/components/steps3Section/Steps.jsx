@@ -1,26 +1,5 @@
 import React from "react";
-
-const steps = [
-  {
-    number: "01",
-    icon: "https://i.ibb.co.com/s9jTPR1S/user.png",
-    title: "Create Account",
-    description:
-      "Sign up for free in seconds. No credit card required to get started.",
-  },
-  {
-    number: "02",
-    icon: "https://i.ibb.co.com/yCfjkFC/package.png",
-    title: "Choose Products",
-    description: "Browse our catalog and select the tools that fit your needs.",
-  },
-  {
-    number: "03",
-    icon: "https://i.ibb.co.com/YTQJCT25/rocket.png",
-    title: "Start Creating",
-    description: "Download and start using your premium tools immediately.",
-  },
-];
+import stepsData from "../../data/stepsdata.json"
 
 const Steps = () => {
   return (
@@ -35,7 +14,7 @@ const Steps = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {steps.map((step) => (
+          {stepsData.map((step) => (
             <div
               key={step.number}
               className="relative bg-white border border-gray-200 rounded-2xl px-8 py-10 flex flex-col items-center text-center gap-5 shadow-sm"
