@@ -6,6 +6,7 @@ import Workflow from "./components/optionalPart/Workflow";
 import Steps from "./components/steps3Section/Steps";
 import Pricing from "./components/pricingSection/Pricing";
 import Stats from "./components/stats/Stats";
+import Banner from "./components/banner/Banner";
 
 function App() {
   const [cart] = useState([]);
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Navbar cartCount={cart} />
+      <Banner />
       <Stats />
       <Steps />
       <Pricing />
