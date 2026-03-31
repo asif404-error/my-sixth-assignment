@@ -34,6 +34,27 @@ const Steps = () => {
             Start using premium digital tools in minutes, not hours.
           </p>
         </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="relative bg-white border border-gray-200 rounded-2xl px-8 py-10 flex flex-col items-center text-center gap-5 shadow-sm"
+            >
+              <div className="absolute top-4 right-4">
+                <span className="bg-purple-600 text-white text-xs font-semibold w-8 h-8 rounded-full flex items-center justify-center">
+                  {step.number}
+                </span>
+              </div>
+              <div className="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center">
+                <img src={step.icon} alt="" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900">{step.title}</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
