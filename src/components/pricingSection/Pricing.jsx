@@ -1,5 +1,5 @@
 import React from "react";
-import plansData from "../../../src/data/plansData.json";
+import plansData from "../../data/plansData.json";
 import { TiTick } from "react-icons/ti";
 
 const Pricing = () => {
