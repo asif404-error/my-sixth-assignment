@@ -16,10 +16,10 @@ const Banner = () => {
           </h1>
           <p className="text-sm text-gray-500 leading-relaxed max-w-md">
             Access premium AI tools, design assets, templates, and productivity
-            software—all in one place. Start creating faster today.
+            software—all in one place. Start creating faster today. <br />
+            Explore Products
           </p>
-          <p className="text-sm text-gray-500">Explore Products</p>
-          <div>
+          <div className="flex items-center gap-4 flex-wrap">
             <button className="bg-purple-600 text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-purple-700 transition-colors">
               Explore Products
             </button>
