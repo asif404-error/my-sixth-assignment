@@ -30,7 +30,7 @@ const Banner = () => {
             </button>
           </div>
         </div>
-        <div>
+        <div className="flex-1 w-full">
           <img
             src={BannerImg}
             alt="AI Digital Workflow"
