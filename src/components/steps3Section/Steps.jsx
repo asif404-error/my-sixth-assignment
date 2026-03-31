@@ -1,5 +1,26 @@
 import React from 'react';
 
+const steps = [
+  {
+    number: "01",
+    icon: "https://i.ibb.co.com/JwkLWK5x/user.png",
+    title: "Create Account",
+    description: "Sign up for free in seconds. No credit card required to get started.",
+  },
+  {
+    number: "02",
+    icon: "https://i.ibb.co.com/yCfjkFC/package.png",
+    title: "Choose Products",
+    description: "Browse our catalog and select the tools that fit your needs.",
+  },
+  {
+    number: "03",
+    icon: "https://i.ibb.co.com/YTQJCT25/rocket.png",
+    title: "Start Creating",
+    description: "Download and start using your premium tools immediately.",
+  },
+];
+
 const Steps = () => {
     return (
         <div>
