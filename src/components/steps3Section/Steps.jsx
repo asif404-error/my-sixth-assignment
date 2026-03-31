@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 
 const steps = [
   {
     number: "01",
     icon: "https://i.ibb.co.com/JwkLWK5x/user.png",
     title: "Create Account",
-    description: "Sign up for free in seconds. No credit card required to get started.",
+    description:
+      "Sign up for free in seconds. No credit card required to get started.",
   },
   {
     number: "02",
@@ -22,11 +23,20 @@ const steps = [
 ];
 
 const Steps = () => {
-    return (
-        <div>
-            
+  return (
+    <section className="bg-gray-50 px-6 py-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+            Get Started In 3 Steps
+          </h2>
+          <p className="text-sm text-gray-500">
+            Start using premium digital tools in minutes, not hours.
+          </p>
         </div>
-    );
+      </div>
+    </section>
+  );
 };
 
 export default Steps;
