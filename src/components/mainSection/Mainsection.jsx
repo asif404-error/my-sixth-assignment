@@ -1,7 +1,14 @@
 import React, { useState } from "react";
+import productsData from "../../data/productsData.json";
+
+const tagStyles = {
+  "best-seller": "bg-orange-100 text-orange-600",
+  populer: "bg-purple-100 text-purple-600",
+  new: "bg-green-100 text-green-600",
+};
 
 const Mainsection = ({ cart }) => {
-    // console.log(cart.length);
+  // console.log(cart.length);
   const [activeTab, setActiveTab] = useState("products");
   return (
     <section className="bg-white px-6 py-16">
@@ -37,6 +44,22 @@ const Mainsection = ({ cart }) => {
             Cart({cart.length})
           </button>
         </div>
+        {activeTab === "products" && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {productsData.map((product) => (
+              <div
+                key={product.id}
+                className="border border-gray-200 rounded-2xl p-6 flex flex-col gap-4 relative"
+              >
+                <span
+                  className={`absolute top-4 right-4 text-xs font-semibold px-3 py-1 rounded-full ${tagStyles[product.tagType]}`}
+                >
+                  {product.tag}
+                </span>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
