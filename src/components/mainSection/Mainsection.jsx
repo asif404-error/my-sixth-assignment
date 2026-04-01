@@ -56,9 +56,12 @@ const Mainsection = ({ cart }) => {
                 >
                   {product.tag}
                 </span>
-                <div text-3xl w-fit>
+                <div className="text-3xl w-fit">
                     <img src={product.icon} alt="" />
                 </div>
+                <h3 className="text-lg font-bold text-gray-900">
+                    {product.name}
+                </h3>
               </div>
             ))}
           </div>
