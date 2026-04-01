@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import productsData from "../../data/productsData.json";
+import { TiTick } from "react-icons/ti";
 
 const tagStyles = {
   "best-seller": "bg-orange-100 text-orange-600",
@@ -8,9 +9,9 @@ const tagStyles = {
 };
 
 const periodLable = {
-    monthly: "/Mo",
-    "one-time" : "/One-Time",
-    yearly: "/Yr",
+  monthly: "/Mo",
+  "one-time": "/One-Time",
+  yearly: "/Yr",
 };
 
 const Mainsection = ({ cart }) => {
@@ -63,18 +64,33 @@ const Mainsection = ({ cart }) => {
                   {product.tag}
                 </span>
                 <div className="text-3xl w-fit">
-                    <img src={product.icon} alt="" />
+                  <img src={product.icon} alt="" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">
-                    {product.name}
+                  {product.name}
                 </h3>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                    {product.description}
+                  {product.description}
                 </p>
                 <div className="flex items-baseline gap-1">
-                    <span className="text-2xl font-bold text-gray-900">${product.price}</span>
-                    <span className="text-sm text-gray-400">{periodLable[product.period]}</span>
+                  <span className="text-2xl font-bold text-gray-900">
+                    ${product.price}
+                  </span>
+                  <span className="text-sm text-gray-400">
+                    {periodLable[product.period]}
+                  </span>
                 </div>
+                <ul className="flex flex-col gap-2">
+                  {product.features.map((feature, ind) => (
+                    <li
+                      key={ind}
+                      className="flex items-center gap-2 text-sm text-gray-600"
+                    >
+                      <TiTick className="text-purple-600" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
