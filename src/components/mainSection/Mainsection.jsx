@@ -37,6 +37,17 @@ const Mainsection = ({ cart, setCart }) => {
     toast.error(`"${product.name}" removed from cart.`);
   };
 
+  const handleCheckout = () => {
+    if (cart.length === 0) {
+      toast.info("Your cart is already empty.");
+      return;
+    }
+    setCart([]);
+    toast.success("Proceeding to checkout! Cart cleared.");
+  };
+
+  const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
+
   return (
     <section className="bg-white px-6 py-16">
       <div className="max-w-7xl mx-auto">
@@ -113,7 +124,7 @@ const Mainsection = ({ cart, setCart }) => {
                 </ul>
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className="mt-auto bg-purple-500 text-white text-sm font-medium py-3 rounded-full hover:bg-indigo-700 transition-colors w-full"
+                  className="btn mt-auto bg-indigo-700 text-white text-sm font-medium py-3 rounded-full hover:bg-purple-600 transition-colors w-full"
                 >
                   Buy Now
                 </button>
@@ -156,12 +167,26 @@ const Mainsection = ({ cart, setCart }) => {
                     </div>
                     <button
                       onClick={() => handleRemove(item.id)}
-                      className="text-sm text-red-500 font-medium border border-red-200 px-4 py-1.5 rounded-full hover:bg-red-50 transition-colors"
+                      className="btn text-sm text-red-500 font-medium border border-red-200 px-4 py-1.5 rounded-full hover:bg-red-50 transition-colors"
                     >
                       Remove
                     </button>
                   </div>
                 ))}
+                <div className="flex items-center justify-between px-2 pt-2">
+                  <span className="text-sm font-semibold text-gray-700">
+                    Total ({cart.length} items)
+                  </span>
+                  <span className="text-lg font-bold text-gray-900">
+                    ${totalPrice}
+                  </span>
+                </div>
+                <button
+                  onClick={handleCheckout}
+                  className="btn bg-indigo-700 text-white text-sm font-medium py-3 rounded-full hover:bg-purple-600 transition-colors w-full mt-2"
+                >
+                  Proceed To Checkout
+                </button>
               </div>
             )}
           </div>

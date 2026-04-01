@@ -18,7 +18,7 @@ function App() {
       <Navbar cartCount={cart} />
       <Banner />
       <Stats />
-      <Mainsection cart={cart} setCart={setCart}/>
+      <Mainsection cart={cart} setCart={setCart} />
       <ToastContainer />
       <Steps />
       <Pricing />
