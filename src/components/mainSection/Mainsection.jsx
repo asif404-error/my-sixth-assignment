@@ -6,8 +6,8 @@ import { FaShoppingCart } from "react-icons/fa";
 
 const tagStyles = {
   "best-seller": "bg-orange-100 text-orange-600",
-  populer: "bg-purple-100 text-purple-600",
-  new: "bg-green-100 text-green-600",
+  "popular": "bg-indigo-100 text-indigo-600",
+  "new": "bg-green-100 text-green-600",
 };
 
 const periodLabel = {
