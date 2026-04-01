@@ -8,16 +8,18 @@ import Pricing from "./components/pricingSection/Pricing";
 import Stats from "./components/stats/Stats";
 import Banner from "./components/banner/Banner";
 import Mainsection from "./components/mainSection/Mainsection";
+import { ToastContainer } from "react-toastify";
 
 function App() {
-  const [cart] = useState([]);
+  const [cart, setCart] = useState([]);
 
   return (
     <>
       <Navbar cartCount={cart} />
       <Banner />
       <Stats />
-      <Mainsection cart={cart} />
+      <Mainsection cart={cart} setCart={setCart}/>
+      <ToastContainer />
       <Steps />
       <Pricing />
       <Workflow />

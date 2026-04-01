@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import productsData from "../../data/productsData.json";
 import { TiTick } from "react-icons/ti";
+import { toast } from "react-toastify";
 
 const tagStyles = {
   "best-seller": "bg-orange-100 text-orange-600",
@@ -14,14 +15,21 @@ const periodLable = {
   yearly: "/Yr",
 };
 
-const Mainsection = ({ cart }) => {
+const Mainsection = ({ cart, setCart }) => {
   // console.log(cart.length);
   const [activeTab, setActiveTab] = useState("products");
 
   const handleAddToCart = (product) => {
     // console.log(product);
+    const alreadyInCart = cart.find((item) => item.id === product.id);
+    if (alreadyInCart) {
+      toast.info(`"${product.name}" is already in your cart.`);
+      return;
+    }
+    setCart([...cart, product]);
+    toast.success(`"${product.name}" added to cart!`);
   };
-  
+
   return (
     <section className="bg-white px-6 py-16">
       <div className="max-w-7xl mx-auto">
