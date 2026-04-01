@@ -7,6 +7,12 @@ const tagStyles = {
   new: "bg-green-100 text-green-600",
 };
 
+const periodLable = {
+    monthly: "/Mo",
+    "one-time" : "/One-Time",
+    yearly: "/Yr",
+};
+
 const Mainsection = ({ cart }) => {
   // console.log(cart.length);
   const [activeTab, setActiveTab] = useState("products");
@@ -62,6 +68,13 @@ const Mainsection = ({ cart }) => {
                 <h3 className="text-lg font-bold text-gray-900">
                     {product.name}
                 </h3>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                    {product.description}
+                </p>
+                <div className="flex items-baseline gap-1">
+                    <span className="text-2xl font-bold text-gray-900">${product.price}</span>
+                    <span className="text-sm text-gray-400">{periodLable[product.period]}</span>
+                </div>
               </div>
             ))}
           </div>
