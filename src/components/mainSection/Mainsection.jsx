@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import productsData from "../../data/productsData.json";
 import { TiTick } from "react-icons/ti";
 import { toast } from "react-toastify";
+import { FaShoppingCart } from "react-icons/fa";
 
 const tagStyles = {
   "best-seller": "bg-orange-100 text-orange-600",
@@ -28,6 +29,12 @@ const Mainsection = ({ cart, setCart }) => {
     }
     setCart([...cart, product]);
     toast.success(`"${product.name}" added to cart!`);
+  };
+
+  const handleRemove = (productId) => {
+    const product = cart.find((item) => item.id === productId);
+    setCart(cart.filter((item) => item.id !== productId));
+    toast.error(`"${product.name}" removed from cart.`);
   };
 
   return (
@@ -112,6 +119,51 @@ const Mainsection = ({ cart, setCart }) => {
                 </button>
               </div>
             ))}
+          </div>
+        )}
+
+        {activeTab === "cart" && (
+          <div className="max-w-2xl mx-auto">
+            {cart.length === 0 ? (
+              <div className="text-center text-gray-400 py-20">
+                <span className="flex justify-center items-center text-center">
+                  <FaShoppingCart className="text-gray-300 text-9xl" />
+                </span>
+                <p className="text-lg font-medium">Your cart is empty.</p>
+                <p text-sm mt-1>
+                  Go to Products and add some items!
+                </p>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-4">
+                {cart.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex items-center justify-between border border-gray-200 rounded-2xl px-5 py-4"
+                  >
+                    <div className="flex items-center gap-4">
+                      <span className="text-2xl">
+                        <img src={item.icon} alt="" />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-gray-900">
+                          {item.name}
+                        </p>
+                        <p className="text-sm text-gray-500">
+                          ${item.price} {periodLable[item.period]}
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => handleRemove(item.id)}
+                      className="text-sm text-red-500 font-medium border border-red-200 px-4 py-1.5 rounded-full hover:bg-red-50 transition-colors"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>
