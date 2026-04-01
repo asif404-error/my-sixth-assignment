@@ -7,6 +7,7 @@ import Steps from "./components/steps3Section/Steps";
 import Pricing from "./components/pricingSection/Pricing";
 import Stats from "./components/stats/Stats";
 import Banner from "./components/banner/Banner";
+import Mainsection from "./components/mainSection/Mainsection";
 
 function App() {
   const [cart] = useState([]);
@@ -16,6 +17,7 @@ function App() {
       <Navbar cartCount={cart} />
       <Banner />
       <Stats />
+      <Mainsection />
       <Steps />
       <Pricing />
       <Workflow />
