@@ -10,7 +10,7 @@ const tagStyles = {
   new: "bg-green-100 text-green-600",
 };
 
-const periodLable = {
+const periodLabel = {
   monthly: "/Mo",
   "one-time": "/One-Time",
   yearly: "/Yr",
@@ -108,7 +108,7 @@ const Mainsection = ({ cart, setCart }) => {
                     ${product.price}
                   </span>
                   <span className="text-sm text-gray-400">
-                    {periodLable[product.period]}
+                    {periodLabel[product.period]}
                   </span>
                 </div>
                 <ul className="flex flex-col gap-2">
@@ -141,7 +141,7 @@ const Mainsection = ({ cart, setCart }) => {
                   <FaShoppingCart className="text-gray-300 text-9xl" />
                 </span>
                 <p className="text-lg font-medium">Your cart is empty.</p>
-                <p text-sm mt-1>
+                <p className="text-sm mt-1">
                   Go to Products and add some items!
                 </p>
               </div>
@@ -161,7 +161,7 @@ const Mainsection = ({ cart, setCart }) => {
                           {item.name}
                         </p>
                         <p className="text-sm text-gray-500">
-                          ${item.price} {periodLable[item.period]}
+                          ${item.price} {periodLabel[item.period]}
                         </p>
                       </div>
                     </div>
