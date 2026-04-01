@@ -56,6 +56,9 @@ const Mainsection = ({ cart }) => {
                 >
                   {product.tag}
                 </span>
+                <div text-3xl w-fit>
+                    <img src={product.icon} alt="" />
+                </div>
               </div>
             ))}
           </div>
