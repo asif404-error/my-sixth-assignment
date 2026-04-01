@@ -17,6 +17,11 @@ const periodLable = {
 const Mainsection = ({ cart }) => {
   // console.log(cart.length);
   const [activeTab, setActiveTab] = useState("products");
+
+  const handleAddToCart = (product) => {
+    // console.log(product);
+  };
+  
   return (
     <section className="bg-white px-6 py-16">
       <div className="max-w-7xl mx-auto">
@@ -91,6 +96,12 @@ const Mainsection = ({ cart }) => {
                     </li>
                   ))}
                 </ul>
+                <button
+                  onClick={() => handleAddToCart(product)}
+                  className="mt-auto bg-purple-500 text-white text-sm font-medium py-3 rounded-full hover:bg-indigo-700 transition-colors w-full"
+                >
+                  Buy Now
+                </button>
               </div>
             ))}
           </div>
